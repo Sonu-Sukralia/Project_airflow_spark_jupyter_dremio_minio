@@ -1,0 +1,34 @@
+
+# Airflow 2.7.1 + Python 3.9 + Spark 3.4.0 + MinIO/S3 + Hudi bundle  (Java 17)
+FROM apache/airflow:2.7.1-python3.9
+
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        openjdk-17-jdk-headless \
+        gcc \
+        python3-dev \
+        procps && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# ---- copy the jars that sit beside this Dockerfile ----
+COPY hadoop-aws-3.3.4.jar \
+     aws-java-sdk-bundle-1.12.262.jar \
+     hudi-spark3.4-bundle_2.12-0.14.0.jar \
+     /tmp/spark-jars/
+
+USER airflow
+ENV SPARK_HOME=/home/airflow/.local/lib/python3.9/site-packages/pyspark
+
+RUN pip install --no-cache-dir --upgrade --no-deps \
+        "apache-airflow-providers-apache-spark==4.1.5" \
+        "pyspark==3.4.0" \
+        "Faker" && \
+    mkdir -p "${SPARK_HOME}/jars" && \
+    cp /tmp/spark-jars/*.jar "${SPARK_HOME}/jars" && \
+    airflow version
+
+USER root
+RUN rm -rf /tmp/spark-jars
+USER airflow

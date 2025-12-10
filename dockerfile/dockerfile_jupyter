@@ -1,0 +1,61 @@
+# ----------------------------------------------------------
+# Spark 3.4.0 + Python 3.9 (slim) + Jupyter Lab
+# + AWS jars (local files)
+# ----------------------------------------------------------
+FROM python:3.9-slim-bookworm
+
+ARG SPARK_VERSION=3.4.0
+ARG HADOOP_VERSION=3
+
+# 1. Install Java (JRE only) + tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      openjdk-17-jre-headless \
+      ca-certificates \
+      wget \
+ && rm -rf /var/lib/apt/lists/*
+
+# 2. Download & unpack Spark 3.4.0 (Hadoop 3) from working mirror
+RUN echo "Downloading Spark ${SPARK_VERSION}..." \
+ && wget --no-check-certificate --tries=10 --timeout=20 \
+      https://apache.root.lu/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+      -O /tmp/spark.tgz \
+ && ls -lh /tmp/spark.tgz \
+ && tar -xzf /tmp/spark.tgz -C /opt \
+ && ln -s /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark \
+ && rm /tmp/spark.tgz \
+ # Strip non-essential stuff from Spark to reduce image size
+ && rm -rf /opt/spark/examples \
+           /opt/spark/data \
+           /opt/spark/R \
+           /opt/spark/kubernetes \
+           /opt/spark/python/test \
+           /opt/spark/jars/*-sources.jar \
+           /opt/spark/jars/*-javadoc.jar
+
+# 3. Copy AWS + Hadoop jars from build context into $SPARK_HOME/jars
+COPY hadoop-aws-3.3.4.jar /opt/spark/jars/
+COPY aws-java-sdk-bundle-1.12.262.jar /opt/spark/jars/
+
+# 4. Install Jupyter & PySpark with no pip cache
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
+ && pip install --no-cache-dir jupyter jupyterlab pyspark==3.4.0
+
+# 5. Environment variables
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$SPARK_HOME/bin:$JAVA_HOME/bin:$PATH
+ENV PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.9.7-src.zip:$PYTHONPATH
+ENV PYSPARK_PYTHON=python
+ENV PYSPARK_DRIVER_PYTHON=python
+
+WORKDIR /workspace
+
+EXPOSE 8888 4040
+
+CMD jupyter lab \
+    --ip=0.0.0.0 \
+    --port=8888 \
+    --no-browser \
+    --allow-root \
+    --NotebookApp.token= \
+    --NotebookApp.password=
