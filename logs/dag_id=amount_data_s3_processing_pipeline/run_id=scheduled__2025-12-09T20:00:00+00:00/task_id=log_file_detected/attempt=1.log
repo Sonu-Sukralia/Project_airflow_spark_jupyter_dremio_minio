@@ -1,0 +1,21 @@
+[2025-12-09T21:20:48.072+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_file_detected scheduled__2025-12-09T20:00:00+00:00 [queued]>
+[2025-12-09T21:20:48.081+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_file_detected scheduled__2025-12-09T20:00:00+00:00 [queued]>
+[2025-12-09T21:20:48.081+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-12-09T21:20:48.093+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): log_file_detected> on 2025-12-09 20:00:00+00:00
+[2025-12-09T21:20:48.099+0000] {standard_task_runner.py:57} INFO - Started process 3791 to run task
+[2025-12-09T21:20:48.102+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'amount_data_s3_processing_pipeline', 'log_file_detected', 'scheduled__2025-12-09T20:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/amount_data_s3_processing_pipeline.py', '--cfg-path', '/tmp/tmpk8du7vna']
+[2025-12-09T21:20:48.104+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask log_file_detected
+[2025-12-09T21:20:48.164+0000] {task_command.py:415} INFO - Running <TaskInstance: amount_data_s3_processing_pipeline.log_file_detected scheduled__2025-12-09T20:00:00+00:00 [running]> on host 9f0bb37009ef
+[2025-12-09T21:20:48.254+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='amount_data_s3_processing_pipeline' AIRFLOW_CTX_TASK_ID='log_file_detected' AIRFLOW_CTX_EXECUTION_DATE='2025-12-09T20:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-09T20:00:00+00:00'
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO - 
+================================================================================
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO -   📁 JSON FILES DETECTED IN MinIO SOURCE BUCKET!
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO -   🚀 Triggering Spark job for data processing...
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO -   ⏳ Please wait, this may take a few minutes...
+[2025-12-09T21:20:48.256+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T21:20:48.256+0000] {amount_data_s3_processing_pipeline.py:100} INFO - 📁 File detection confirmed - launching Spark job
+[2025-12-09T21:20:48.256+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-09T21:20:48.268+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=amount_data_s3_processing_pipeline, task_id=log_file_detected, execution_date=20251209T200000, start_date=20251209T212048, end_date=20251209T212048
+[2025-12-09T21:20:48.314+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-09T21:20:48.336+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

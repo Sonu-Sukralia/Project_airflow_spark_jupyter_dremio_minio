@@ -1,0 +1,34 @@
+[2025-12-09T21:53:54.010+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_pipeline_completion manual__2025-12-09T21:50:41.925246+00:00 [queued]>
+[2025-12-09T21:53:54.017+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_pipeline_completion manual__2025-12-09T21:50:41.925246+00:00 [queued]>
+[2025-12-09T21:53:54.017+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-12-09T21:53:54.027+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): log_pipeline_completion> on 2025-12-09 21:50:41.925246+00:00
+[2025-12-09T21:53:54.032+0000] {standard_task_runner.py:57} INFO - Started process 8129 to run task
+[2025-12-09T21:53:54.035+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'amount_data_s3_processing_pipeline', 'log_pipeline_completion', 'manual__2025-12-09T21:50:41.925246+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/amount_data_s3_processing_pipeline.py', '--cfg-path', '/tmp/tmpkkqjz_2p']
+[2025-12-09T21:53:54.036+0000] {standard_task_runner.py:85} INFO - Job 51: Subtask log_pipeline_completion
+[2025-12-09T21:53:54.075+0000] {task_command.py:415} INFO - Running <TaskInstance: amount_data_s3_processing_pipeline.log_pipeline_completion manual__2025-12-09T21:50:41.925246+00:00 [running]> on host 9f0bb37009ef
+[2025-12-09T21:53:54.144+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='amount_data_s3_processing_pipeline' AIRFLOW_CTX_TASK_ID='log_pipeline_completion' AIRFLOW_CTX_EXECUTION_DATE='2025-12-09T21:50:41.925246+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-09T21:50:41.925246+00:00'
+[2025-12-09T21:53:54.156+0000] {logging_mixin.py:151} INFO - 
+================================================================================
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -   ✅ PIPELINE COMPLETED SUCCESSFULLY!
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -   📄 Processed File: orders_20251209_215044.json
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -   ✨ All tasks executed successfully
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -   📊 Processed data is now available in MinIO warehouse bucket
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO - 
+  🔗 ACCESS RESULTS:
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -      📊 Spark History: http://localhost:18080
+[2025-12-09T21:53:54.157+0000] {logging_mixin.py:151} INFO -      🪣 MinIO Console: http://localhost:9001
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -         - Bucket: warehouse
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -         - Folder: processed/ (contains processed data)
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -         - Folder: reports/ (contains summary statistics)
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO - 
+  📈 NEXT STEPS:
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -      1. Upload another JSON file to source/ to trigger pipeline again
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -      2. Check MinIO warehouse bucket for new results
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO -      3. Monitor Spark History Server for job details
+[2025-12-09T21:53:54.158+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T21:53:54.158+0000] {amount_data_s3_processing_pipeline.py:256} INFO - ✅ Pipeline completed - results available in MinIO for orders_20251209_215044.json
+[2025-12-09T21:53:54.158+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-09T21:53:54.167+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=amount_data_s3_processing_pipeline, task_id=log_pipeline_completion, execution_date=20251209T215041, start_date=20251209T215354, end_date=20251209T215354
+[2025-12-09T21:53:54.207+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-09T21:53:54.222+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

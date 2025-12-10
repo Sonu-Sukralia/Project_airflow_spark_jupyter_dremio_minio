@@ -1,0 +1,488 @@
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 19:13:55 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 19:13:55 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 19:13:55 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 19:13:55 INFO SignalUtils: Registering signal handler for INT
+25/12/09 19:13:56 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 19:13:56 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 19:13:56 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 19:13:56 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 19:13:56 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 19:13:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 19:13:57 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 19:13:58 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 19:13:58 INFO Master: Running Spark version 3.4.0
+25/12/09 19:13:58 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 19:13:58 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 19:13:58 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 19:13:59 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 19:13:59 INFO Master: Registering worker spark-worker:36297 with 4 cores, 4.0 GiB RAM
+25/12/09 19:20:56 INFO Master: Registering app sometest
+25/12/09 19:20:56 INFO Master: Registered app sometest with ID app-20251209192056-0000
+25/12/09 19:20:56 INFO Master: Start scheduling for app app-20251209192056-0000 with rpId: 0
+25/12/09 19:20:56 INFO Master: Launching executor app-20251209192056-0000/0 on worker worker-20251209191358-spark-worker-36297
+25/12/09 19:20:56 INFO Master: Start scheduling for app app-20251209192056-0000 with rpId: 0
+25/12/09 19:22:17 INFO Master: Received unregister request from application app-20251209192056-0000
+25/12/09 19:22:17 INFO Master: Removing app app-20251209192056-0000
+25/12/09 19:22:17 INFO Master: 172.19.0.10:52774 got disassociated, removing it.
+25/12/09 19:22:17 INFO Master: jupyter-spark:42083 got disassociated, removing it.
+25/12/09 19:22:17 WARN Master: Got status update for unknown executor app-20251209192056-0000/0
+25/12/09 19:22:26 INFO Master: Registering app sometest
+25/12/09 19:22:26 INFO Master: Registered app sometest with ID app-20251209192226-0001
+25/12/09 19:22:26 INFO Master: Start scheduling for app app-20251209192226-0001 with rpId: 0
+25/12/09 19:22:26 INFO Master: Launching executor app-20251209192226-0001/0 on worker worker-20251209191358-spark-worker-36297
+25/12/09 19:22:26 INFO Master: Start scheduling for app app-20251209192226-0001 with rpId: 0
+25/12/09 19:23:39 INFO Master: Received unregister request from application app-20251209192226-0001
+25/12/09 19:23:39 INFO Master: Removing app app-20251209192226-0001
+25/12/09 19:23:39 INFO Master: 172.19.0.10:60784 got disassociated, removing it.
+25/12/09 19:23:39 INFO Master: jupyter-spark:34525 got disassociated, removing it.
+25/12/09 19:23:39 WARN Master: Got status update for unknown executor app-20251209192226-0001/0
+25/12/09 19:23:47 INFO Master: Registering app sometest
+25/12/09 19:23:47 INFO Master: Registered app sometest with ID app-20251209192347-0002
+25/12/09 19:23:47 INFO Master: Start scheduling for app app-20251209192347-0002 with rpId: 0
+25/12/09 19:23:47 INFO Master: Launching executor app-20251209192347-0002/0 on worker worker-20251209191358-spark-worker-36297
+25/12/09 19:23:47 INFO Master: Start scheduling for app app-20251209192347-0002 with rpId: 0
+25/12/09 19:25:22 INFO Master: Received unregister request from application app-20251209192347-0002
+25/12/09 19:25:22 INFO Master: Removing app app-20251209192347-0002
+25/12/09 19:25:22 INFO Master: 172.19.0.10:51240 got disassociated, removing it.
+25/12/09 19:25:22 INFO Master: jupyter-spark:45353 got disassociated, removing it.
+25/12/09 19:25:22 WARN Master: Got status update for unknown executor app-20251209192347-0002/0
+25/12/09 19:25:29 INFO Master: Registering app somerndsdss
+25/12/09 19:25:29 INFO Master: Registered app somerndsdss with ID app-20251209192529-0003
+25/12/09 19:25:29 INFO Master: Start scheduling for app app-20251209192529-0003 with rpId: 0
+25/12/09 19:25:29 INFO Master: Launching executor app-20251209192529-0003/0 on worker worker-20251209191358-spark-worker-36297
+25/12/09 19:25:29 INFO Master: Start scheduling for app app-20251209192529-0003 with rpId: 0
+25/12/09 19:31:31 INFO Master: 172.19.0.11:33956 got disassociated, removing it.
+25/12/09 19:31:31 INFO Master: spark-worker:36297 got disassociated, removing it.
+25/12/09 19:31:31 INFO Master: Removing worker worker-20251209191358-spark-worker-36297 on spark-worker:36297
+25/12/09 19:31:31 INFO Master: Telling app of lost executor: 0
+25/12/09 19:31:31 INFO Master: Telling app of lost worker: worker-20251209191358-spark-worker-36297
+25/12/09 19:31:31 INFO Master: Start scheduling for app app-20251209192529-0003 with rpId: 0
+25/12/09 19:31:31 WARN Master: App app-20251209192529-0003 requires more resource than any of Workers could have.
+25/12/09 19:31:31 WARN TransportChannelHandler: Exception in connection from /172.19.0.10:38690
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+25/12/09 19:31:31 INFO Master: 172.19.0.10:38690 got disassociated, removing it.
+25/12/09 19:31:31 INFO Master: jupyter-spark:36997 got disassociated, removing it.
+25/12/09 19:31:31 INFO Master: Removing app app-20251209192529-0003
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 19:32:09 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 19:32:09 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 19:32:09 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 19:32:09 INFO SignalUtils: Registering signal handler for INT
+25/12/09 19:32:09 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 19:32:09 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 19:32:09 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 19:32:09 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 19:32:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 19:32:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 19:32:10 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 19:32:10 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 19:32:10 INFO Master: Running Spark version 3.4.0
+25/12/09 19:32:11 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 19:32:11 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 19:32:11 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 19:32:12 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 19:32:13 INFO Master: Registering worker spark-worker:44899 with 4 cores, 4.0 GiB RAM
+25/12/09 19:32:51 INFO Master: Registering app sometest
+25/12/09 19:32:51 INFO Master: Registered app sometest with ID app-20251209193251-0000
+25/12/09 19:32:51 INFO Master: Start scheduling for app app-20251209193251-0000 with rpId: 0
+25/12/09 19:32:51 INFO Master: Launching executor app-20251209193251-0000/0 on worker worker-20251209193211-spark-worker-44899
+25/12/09 19:32:52 INFO Master: Start scheduling for app app-20251209193251-0000 with rpId: 0
+25/12/09 19:33:01 INFO Master: Received unregister request from application app-20251209193251-0000
+25/12/09 19:33:01 INFO Master: Removing app app-20251209193251-0000
+25/12/09 19:33:01 INFO Master: 172.19.0.11:37408 got disassociated, removing it.
+25/12/09 19:33:01 INFO Master: jupyter-spark:42157 got disassociated, removing it.
+25/12/09 19:33:01 WARN Master: Got status update for unknown executor app-20251209193251-0000/0
+25/12/09 19:38:41 INFO Master: Registering app sometest
+25/12/09 19:38:41 INFO Master: Registered app sometest with ID app-20251209193841-0001
+25/12/09 19:38:41 INFO Master: Start scheduling for app app-20251209193841-0001 with rpId: 0
+25/12/09 19:38:41 INFO Master: Launching executor app-20251209193841-0001/0 on worker worker-20251209193211-spark-worker-44899
+25/12/09 19:38:41 INFO Master: Start scheduling for app app-20251209193841-0001 with rpId: 0
+25/12/09 19:38:53 INFO Master: Received unregister request from application app-20251209193841-0001
+25/12/09 19:38:53 INFO Master: Removing app app-20251209193841-0001
+25/12/09 19:38:53 INFO Master: 172.19.0.11:58736 got disassociated, removing it.
+25/12/09 19:38:53 INFO Master: jupyter-spark:43587 got disassociated, removing it.
+25/12/09 19:38:53 WARN Master: Got status update for unknown executor app-20251209193841-0001/0
+25/12/09 19:55:50 INFO Master: Registering app arrow-spark
+25/12/09 19:55:50 INFO Master: Registered app arrow-spark with ID app-20251209195550-0002
+25/12/09 19:55:50 INFO Master: Start scheduling for app app-20251209195550-0002 with rpId: 0
+25/12/09 19:55:50 INFO Master: Launching executor app-20251209195550-0002/0 on worker worker-20251209193211-spark-worker-44899
+25/12/09 19:55:50 INFO Master: Start scheduling for app app-20251209195550-0002 with rpId: 0
+25/12/09 19:56:10 INFO Master: Received unregister request from application app-20251209195550-0002
+25/12/09 19:56:10 INFO Master: Removing app app-20251209195550-0002
+25/12/09 19:56:10 INFO Master: 172.19.0.6:37856 got disassociated, removing it.
+25/12/09 19:56:10 INFO Master: ead6510418b0:41713 got disassociated, removing it.
+25/12/09 19:56:10 WARN Master: Got status update for unknown executor app-20251209195550-0002/0
+25/12/09 20:00:04 INFO Master: Registering app arrow-spark
+25/12/09 20:00:04 INFO Master: Registered app arrow-spark with ID app-20251209200004-0003
+25/12/09 20:00:04 INFO Master: Start scheduling for app app-20251209200004-0003 with rpId: 0
+25/12/09 20:00:04 INFO Master: Launching executor app-20251209200004-0003/0 on worker worker-20251209193211-spark-worker-44899
+25/12/09 20:00:04 INFO Master: Start scheduling for app app-20251209200004-0003 with rpId: 0
+25/12/09 20:00:39 INFO Master: Received unregister request from application app-20251209200004-0003
+25/12/09 20:00:39 INFO Master: Removing app app-20251209200004-0003
+25/12/09 20:00:39 INFO Master: 172.19.0.6:53306 got disassociated, removing it.
+25/12/09 20:00:39 INFO Master: ead6510418b0:35511 got disassociated, removing it.
+25/12/09 20:00:39 WARN Master: Got status update for unknown executor app-20251209200004-0003/0
+25/12/09 20:29:19 INFO Master: 172.19.0.9:50866 got disassociated, removing it.
+25/12/09 20:29:19 INFO Master: spark-worker:44899 got disassociated, removing it.
+25/12/09 20:29:19 INFO Master: Removing worker worker-20251209193211-spark-worker-44899 on spark-worker:44899
+25/12/09 20:29:19 INFO Master: Telling app of lost worker: worker-20251209193211-spark-worker-44899
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 20:29:32 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 20:29:32 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 20:29:32 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 20:29:32 INFO SignalUtils: Registering signal handler for INT
+25/12/09 20:29:32 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 20:29:32 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 20:29:32 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 20:29:32 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 20:29:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 20:29:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 20:29:33 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 20:29:33 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 20:29:33 INFO Master: Running Spark version 3.4.0
+25/12/09 20:29:33 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 20:29:33 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 20:29:33 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 20:29:34 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 20:29:35 INFO Master: Registering worker spark-worker:38099 with 4 cores, 4.0 GiB RAM
+25/12/09 20:32:33 INFO Master: Registering app Airflow_Job_20251209_203232
+25/12/09 20:32:33 INFO Master: Registered app Airflow_Job_20251209_203232 with ID app-20251209203233-0000
+25/12/09 20:32:33 INFO Master: Start scheduling for app app-20251209203233-0000 with rpId: 0
+25/12/09 20:32:33 INFO Master: Launching executor app-20251209203233-0000/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 20:32:33 INFO Master: Start scheduling for app app-20251209203233-0000 with rpId: 0
+25/12/09 20:32:43 INFO Master: Received unregister request from application app-20251209203233-0000
+25/12/09 20:32:43 INFO Master: Removing app app-20251209203233-0000
+25/12/09 20:32:43 INFO Master: 172.19.0.8:47350 got disassociated, removing it.
+25/12/09 20:32:43 INFO Master: 9f0bb37009ef:43299 got disassociated, removing it.
+25/12/09 20:32:43 WARN Master: Got status update for unknown executor app-20251209203233-0000/0
+25/12/09 20:34:30 INFO Master: Registering app Airflow_Job_20251209_203429
+25/12/09 20:34:30 INFO Master: Registered app Airflow_Job_20251209_203429 with ID app-20251209203430-0001
+25/12/09 20:34:30 INFO Master: Start scheduling for app app-20251209203430-0001 with rpId: 0
+25/12/09 20:34:30 INFO Master: Launching executor app-20251209203430-0001/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 20:34:30 INFO Master: Start scheduling for app app-20251209203430-0001 with rpId: 0
+25/12/09 20:34:38 INFO Master: Received unregister request from application app-20251209203430-0001
+25/12/09 20:34:38 INFO Master: Removing app app-20251209203430-0001
+25/12/09 20:34:38 INFO Master: 172.19.0.8:43978 got disassociated, removing it.
+25/12/09 20:34:38 INFO Master: 9f0bb37009ef:43129 got disassociated, removing it.
+25/12/09 20:34:38 WARN Master: Got status update for unknown executor app-20251209203430-0001/0
+25/12/09 20:39:41 INFO Master: Registering app Airflow_Job_20251209_203940
+25/12/09 20:39:41 INFO Master: Registered app Airflow_Job_20251209_203940 with ID app-20251209203941-0002
+25/12/09 20:39:41 INFO Master: Start scheduling for app app-20251209203941-0002 with rpId: 0
+25/12/09 20:39:41 INFO Master: Launching executor app-20251209203941-0002/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 20:39:41 INFO Master: Start scheduling for app app-20251209203941-0002 with rpId: 0
+25/12/09 20:39:49 INFO Master: Received unregister request from application app-20251209203941-0002
+25/12/09 20:39:49 INFO Master: Removing app app-20251209203941-0002
+25/12/09 20:39:49 INFO Master: 172.19.0.8:52806 got disassociated, removing it.
+25/12/09 20:39:49 INFO Master: 9f0bb37009ef:41553 got disassociated, removing it.
+25/12/09 20:39:49 WARN Master: Got status update for unknown executor app-20251209203941-0002/0
+25/12/09 20:45:02 INFO Master: Registering app Airflow_Job_20251209_204501
+25/12/09 20:45:02 INFO Master: Registered app Airflow_Job_20251209_204501 with ID app-20251209204502-0003
+25/12/09 20:45:02 INFO Master: Start scheduling for app app-20251209204502-0003 with rpId: 0
+25/12/09 20:45:02 INFO Master: Launching executor app-20251209204502-0003/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 20:45:02 INFO Master: Start scheduling for app app-20251209204502-0003 with rpId: 0
+25/12/09 20:45:12 INFO Master: Received unregister request from application app-20251209204502-0003
+25/12/09 20:45:12 INFO Master: Removing app app-20251209204502-0003
+25/12/09 20:45:12 INFO Master: 172.19.0.8:58540 got disassociated, removing it.
+25/12/09 20:45:12 INFO Master: 9f0bb37009ef:41339 got disassociated, removing it.
+25/12/09 20:45:12 WARN Master: Got status update for unknown executor app-20251209204502-0003/0
+25/12/09 21:20:53 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:20:53 INFO Master: Registered app AmountDataProcessor with ID app-20251209212053-0004
+25/12/09 21:20:53 INFO Master: Start scheduling for app app-20251209212053-0004 with rpId: 0
+25/12/09 21:20:53 INFO Master: Launching executor app-20251209212053-0004/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:20:53 INFO Master: Launching executor app-20251209212053-0004/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:20:54 INFO Master: Start scheduling for app app-20251209212053-0004 with rpId: 0
+25/12/09 21:20:54 INFO Master: Start scheduling for app app-20251209212053-0004 with rpId: 0
+25/12/09 21:20:55 INFO Master: Received unregister request from application app-20251209212053-0004
+25/12/09 21:20:55 INFO Master: Removing app app-20251209212053-0004
+25/12/09 21:20:55 WARN Master: Got status update for unknown executor app-20251209212053-0004/0
+25/12/09 21:20:55 WARN Master: Got status update for unknown executor app-20251209212053-0004/1
+25/12/09 21:20:55 INFO Master: 172.19.0.8:54658 got disassociated, removing it.
+25/12/09 21:20:55 INFO Master: 9f0bb37009ef:42987 got disassociated, removing it.
+25/12/09 21:25:59 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:25:59 INFO Master: Registered app AmountDataProcessor with ID app-20251209212559-0005
+25/12/09 21:25:59 INFO Master: Start scheduling for app app-20251209212559-0005 with rpId: 0
+25/12/09 21:25:59 INFO Master: Launching executor app-20251209212559-0005/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:25:59 INFO Master: Launching executor app-20251209212559-0005/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:25:59 INFO Master: Start scheduling for app app-20251209212559-0005 with rpId: 0
+25/12/09 21:25:59 INFO Master: Start scheduling for app app-20251209212559-0005 with rpId: 0
+25/12/09 21:26:01 INFO Master: Received unregister request from application app-20251209212559-0005
+25/12/09 21:26:01 INFO Master: Removing app app-20251209212559-0005
+25/12/09 21:26:01 WARN Master: Got status update for unknown executor app-20251209212559-0005/1
+25/12/09 21:26:01 INFO Master: 172.19.0.8:51750 got disassociated, removing it.
+25/12/09 21:26:01 INFO Master: 9f0bb37009ef:40503 got disassociated, removing it.
+25/12/09 21:26:01 WARN Master: Got status update for unknown executor app-20251209212559-0005/0
+25/12/09 21:26:59 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:26:59 INFO Master: Registered app AmountDataProcessor with ID app-20251209212659-0006
+25/12/09 21:26:59 INFO Master: Start scheduling for app app-20251209212659-0006 with rpId: 0
+25/12/09 21:26:59 INFO Master: Launching executor app-20251209212659-0006/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:26:59 INFO Master: Launching executor app-20251209212659-0006/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:26:59 INFO Master: Start scheduling for app app-20251209212659-0006 with rpId: 0
+25/12/09 21:26:59 INFO Master: Start scheduling for app app-20251209212659-0006 with rpId: 0
+25/12/09 21:27:15 INFO Master: Received unregister request from application app-20251209212659-0006
+25/12/09 21:27:15 INFO Master: Removing app app-20251209212659-0006
+25/12/09 21:27:15 INFO Master: 172.19.0.8:48664 got disassociated, removing it.
+25/12/09 21:27:15 INFO Master: 9f0bb37009ef:37755 got disassociated, removing it.
+25/12/09 21:27:15 WARN Master: Got status update for unknown executor app-20251209212659-0006/0
+25/12/09 21:27:15 WARN Master: Got status update for unknown executor app-20251209212659-0006/1
+25/12/09 21:37:08 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:37:08 INFO Master: Registered app AmountDataProcessor with ID app-20251209213708-0007
+25/12/09 21:37:08 INFO Master: Start scheduling for app app-20251209213708-0007 with rpId: 0
+25/12/09 21:37:08 INFO Master: Launching executor app-20251209213708-0007/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:37:08 INFO Master: Launching executor app-20251209213708-0007/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:37:08 INFO Master: Start scheduling for app app-20251209213708-0007 with rpId: 0
+25/12/09 21:37:08 INFO Master: Start scheduling for app app-20251209213708-0007 with rpId: 0
+25/12/09 21:37:21 INFO Master: Received unregister request from application app-20251209213708-0007
+25/12/09 21:37:21 INFO Master: Removing app app-20251209213708-0007
+25/12/09 21:37:21 INFO Master: 172.19.0.8:57554 got disassociated, removing it.
+25/12/09 21:37:21 INFO Master: 9f0bb37009ef:37161 got disassociated, removing it.
+25/12/09 21:37:21 WARN Master: Got status update for unknown executor app-20251209213708-0007/0
+25/12/09 21:37:21 WARN Master: Got status update for unknown executor app-20251209213708-0007/1
+25/12/09 21:38:18 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:38:18 INFO Master: Registered app AmountDataProcessor with ID app-20251209213818-0008
+25/12/09 21:38:18 INFO Master: Start scheduling for app app-20251209213818-0008 with rpId: 0
+25/12/09 21:38:18 INFO Master: Launching executor app-20251209213818-0008/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:38:18 INFO Master: Launching executor app-20251209213818-0008/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:38:18 INFO Master: Start scheduling for app app-20251209213818-0008 with rpId: 0
+25/12/09 21:38:18 INFO Master: Start scheduling for app app-20251209213818-0008 with rpId: 0
+25/12/09 21:38:32 INFO Master: Received unregister request from application app-20251209213818-0008
+25/12/09 21:38:32 INFO Master: Removing app app-20251209213818-0008
+25/12/09 21:38:32 INFO Master: 172.19.0.8:47956 got disassociated, removing it.
+25/12/09 21:38:32 INFO Master: 9f0bb37009ef:40817 got disassociated, removing it.
+25/12/09 21:38:32 WARN Master: Got status update for unknown executor app-20251209213818-0008/1
+25/12/09 21:38:32 WARN Master: Got status update for unknown executor app-20251209213818-0008/0
+25/12/09 21:53:39 INFO Master: Registering app AmountDataProcessor
+25/12/09 21:53:39 INFO Master: Registered app AmountDataProcessor with ID app-20251209215339-0009
+25/12/09 21:53:39 INFO Master: Start scheduling for app app-20251209215339-0009 with rpId: 0
+25/12/09 21:53:39 INFO Master: Launching executor app-20251209215339-0009/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:53:39 INFO Master: Launching executor app-20251209215339-0009/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 21:53:39 INFO Master: Start scheduling for app app-20251209215339-0009 with rpId: 0
+25/12/09 21:53:39 INFO Master: Start scheduling for app app-20251209215339-0009 with rpId: 0
+25/12/09 21:53:52 INFO Master: Received unregister request from application app-20251209215339-0009
+25/12/09 21:53:52 INFO Master: Removing app app-20251209215339-0009
+25/12/09 21:53:52 INFO Master: 172.19.0.8:52584 got disassociated, removing it.
+25/12/09 21:53:52 INFO Master: 9f0bb37009ef:34561 got disassociated, removing it.
+25/12/09 21:53:52 WARN Master: Got status update for unknown executor app-20251209215339-0009/1
+25/12/09 21:53:52 WARN Master: Got status update for unknown executor app-20251209215339-0009/0
+25/12/09 22:00:10 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:00:10 INFO Master: Registered app AmountDataProcessor with ID app-20251209220010-0010
+25/12/09 22:00:10 INFO Master: Start scheduling for app app-20251209220010-0010 with rpId: 0
+25/12/09 22:00:10 INFO Master: Launching executor app-20251209220010-0010/0 on worker worker-20251209202933-spark-worker-38099
+25/12/09 22:00:10 INFO Master: Launching executor app-20251209220010-0010/1 on worker worker-20251209202933-spark-worker-38099
+25/12/09 22:00:10 INFO Master: Start scheduling for app app-20251209220010-0010 with rpId: 0
+25/12/09 22:00:10 INFO Master: Start scheduling for app app-20251209220010-0010 with rpId: 0
+25/12/09 22:00:22 INFO Master: Received unregister request from application app-20251209220010-0010
+25/12/09 22:00:22 INFO Master: Removing app app-20251209220010-0010
+25/12/09 22:00:22 INFO Master: 172.19.0.8:39642 got disassociated, removing it.
+25/12/09 22:00:22 INFO Master: 9f0bb37009ef:44455 got disassociated, removing it.
+25/12/09 22:00:22 WARN Master: Got status update for unknown executor app-20251209220010-0010/0
+25/12/09 22:00:22 WARN Master: Got status update for unknown executor app-20251209220010-0010/1
+25/12/09 22:01:48 INFO Master: 172.19.0.7:55434 got disassociated, removing it.
+25/12/09 22:01:48 INFO Master: spark-worker:38099 got disassociated, removing it.
+25/12/09 22:01:48 INFO Master: Removing worker worker-20251209202933-spark-worker-38099 on spark-worker:38099
+25/12/09 22:01:48 INFO Master: Telling app of lost worker: worker-20251209202933-spark-worker-38099
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 22:12:47 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 22:12:47 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 22:12:47 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 22:12:47 INFO SignalUtils: Registering signal handler for INT
+25/12/09 22:12:47 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 22:12:47 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 22:12:47 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:12:47 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:12:47 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 22:12:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 22:12:48 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 22:12:49 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 22:12:49 INFO Master: Running Spark version 3.4.0
+25/12/09 22:12:49 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 22:12:49 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 22:12:49 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 22:12:49 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 22:12:51 INFO Master: Registering worker spark-worker:45971 with 4 cores, 4.0 GiB RAM
+25/12/09 22:16:16 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:16:16 INFO Master: Registered app AmountDataProcessor with ID app-20251209221616-0000
+25/12/09 22:16:16 INFO Master: Start scheduling for app app-20251209221616-0000 with rpId: 0
+25/12/09 22:16:16 INFO Master: Launching executor app-20251209221616-0000/0 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:16:16 INFO Master: Launching executor app-20251209221616-0000/1 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:16:16 INFO Master: Start scheduling for app app-20251209221616-0000 with rpId: 0
+25/12/09 22:16:16 INFO Master: Start scheduling for app app-20251209221616-0000 with rpId: 0
+25/12/09 22:16:16 INFO Master: Received unregister request from application app-20251209221616-0000
+25/12/09 22:16:16 INFO Master: Removing app app-20251209221616-0000
+25/12/09 22:16:16 WARN Master: Got status update for unknown executor app-20251209221616-0000/0
+25/12/09 22:16:16 WARN Master: Got status update for unknown executor app-20251209221616-0000/1
+25/12/09 22:16:16 INFO Master: 172.19.0.7:46780 got disassociated, removing it.
+25/12/09 22:16:16 INFO Master: 9a461450159a:40375 got disassociated, removing it.
+25/12/09 22:19:19 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:19:19 INFO Master: Registered app AmountDataProcessor with ID app-20251209221919-0001
+25/12/09 22:19:19 INFO Master: Start scheduling for app app-20251209221919-0001 with rpId: 0
+25/12/09 22:19:19 INFO Master: Launching executor app-20251209221919-0001/0 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:19:19 INFO Master: Launching executor app-20251209221919-0001/1 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:19:19 INFO Master: Start scheduling for app app-20251209221919-0001 with rpId: 0
+25/12/09 22:19:19 INFO Master: Start scheduling for app app-20251209221919-0001 with rpId: 0
+25/12/09 22:19:19 INFO Master: Received unregister request from application app-20251209221919-0001
+25/12/09 22:19:19 INFO Master: Removing app app-20251209221919-0001
+25/12/09 22:19:19 WARN Master: Got status update for unknown executor app-20251209221919-0001/0
+25/12/09 22:19:19 WARN Master: Got status update for unknown executor app-20251209221919-0001/1
+25/12/09 22:19:19 INFO Master: 172.19.0.7:45536 got disassociated, removing it.
+25/12/09 22:19:19 INFO Master: 9a461450159a:36037 got disassociated, removing it.
+25/12/09 22:21:17 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:21:17 INFO Master: Registered app AmountDataProcessor with ID app-20251209222117-0002
+25/12/09 22:21:17 INFO Master: Start scheduling for app app-20251209222117-0002 with rpId: 0
+25/12/09 22:21:17 INFO Master: Launching executor app-20251209222117-0002/0 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:21:17 INFO Master: Launching executor app-20251209222117-0002/1 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:21:17 INFO Master: Start scheduling for app app-20251209222117-0002 with rpId: 0
+25/12/09 22:21:17 INFO Master: Start scheduling for app app-20251209222117-0002 with rpId: 0
+25/12/09 22:21:17 INFO Master: Received unregister request from application app-20251209222117-0002
+25/12/09 22:21:17 INFO Master: Removing app app-20251209222117-0002
+25/12/09 22:21:17 WARN Master: Got status update for unknown executor app-20251209222117-0002/1
+25/12/09 22:21:17 WARN Master: Got status update for unknown executor app-20251209222117-0002/0
+25/12/09 22:21:17 INFO Master: 172.19.0.7:41270 got disassociated, removing it.
+25/12/09 22:21:17 INFO Master: 9a461450159a:44115 got disassociated, removing it.
+25/12/09 22:22:21 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:22:21 INFO Master: Registered app AmountDataProcessor with ID app-20251209222221-0003
+25/12/09 22:22:21 INFO Master: Start scheduling for app app-20251209222221-0003 with rpId: 0
+25/12/09 22:22:21 INFO Master: Launching executor app-20251209222221-0003/0 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:22:21 INFO Master: Launching executor app-20251209222221-0003/1 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:22:21 INFO Master: Start scheduling for app app-20251209222221-0003 with rpId: 0
+25/12/09 22:22:21 INFO Master: Start scheduling for app app-20251209222221-0003 with rpId: 0
+25/12/09 22:22:21 INFO Master: Received unregister request from application app-20251209222221-0003
+25/12/09 22:22:21 INFO Master: Removing app app-20251209222221-0003
+25/12/09 22:22:21 WARN Master: Got status update for unknown executor app-20251209222221-0003/0
+25/12/09 22:22:21 WARN Master: Got status update for unknown executor app-20251209222221-0003/1
+25/12/09 22:22:21 INFO Master: 172.19.0.7:57216 got disassociated, removing it.
+25/12/09 22:22:21 INFO Master: 9a461450159a:35505 got disassociated, removing it.
+25/12/09 22:24:26 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:24:26 INFO Master: Registered app AmountDataProcessor with ID app-20251209222426-0004
+25/12/09 22:24:26 INFO Master: Start scheduling for app app-20251209222426-0004 with rpId: 0
+25/12/09 22:24:26 INFO Master: Launching executor app-20251209222426-0004/0 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:24:26 INFO Master: Launching executor app-20251209222426-0004/1 on worker worker-20251209221249-spark-worker-45971
+25/12/09 22:24:26 INFO Master: Start scheduling for app app-20251209222426-0004 with rpId: 0
+25/12/09 22:24:26 INFO Master: Start scheduling for app app-20251209222426-0004 with rpId: 0
+25/12/09 22:24:41 INFO Master: Received unregister request from application app-20251209222426-0004
+25/12/09 22:24:41 INFO Master: Removing app app-20251209222426-0004
+25/12/09 22:24:41 INFO Master: 172.19.0.7:47446 got disassociated, removing it.
+25/12/09 22:24:41 INFO Master: 9a461450159a:43145 got disassociated, removing it.
+25/12/09 22:24:41 WARN Master: Got status update for unknown executor app-20251209222426-0004/0
+25/12/09 22:24:41 WARN Master: Got status update for unknown executor app-20251209222426-0004/1
+25/12/09 22:25:08 INFO Master: 172.19.0.10:36472 got disassociated, removing it.
+25/12/09 22:25:08 INFO Master: spark-worker:45971 got disassociated, removing it.
+25/12/09 22:25:08 INFO Master: Removing worker worker-20251209221249-spark-worker-45971 on spark-worker:45971
+25/12/09 22:25:08 INFO Master: Telling app of lost worker: worker-20251209221249-spark-worker-45971
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 22:25:21 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 22:25:21 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 22:25:21 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 22:25:21 INFO SignalUtils: Registering signal handler for INT
+25/12/09 22:25:21 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 22:25:21 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 22:25:21 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:25:21 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:25:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 22:25:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 22:25:22 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 22:25:23 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 22:25:23 INFO Master: Running Spark version 3.4.0
+25/12/09 22:25:23 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 22:25:23 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 22:25:23 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 22:25:24 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 22:25:25 INFO Master: Registering worker spark-worker:42201 with 4 cores, 4.0 GiB RAM
+25/12/09 22:26:23 INFO Master: 172.19.0.11:55492 got disassociated, removing it.
+25/12/09 22:26:23 INFO Master: spark-worker:42201 got disassociated, removing it.
+25/12/09 22:26:23 INFO Master: Removing worker worker-20251209222524-spark-worker-42201 on spark-worker:42201
+25/12/09 22:26:23 INFO Master: Telling app of lost worker: worker-20251209222524-spark-worker-42201
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 22:28:26 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 22:28:26 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 22:28:26 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 22:28:26 INFO SignalUtils: Registering signal handler for INT
+25/12/09 22:28:27 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 22:28:27 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 22:28:27 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:28:27 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:28:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 22:28:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 22:28:28 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 22:28:28 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 22:28:28 INFO Master: Running Spark version 3.4.0
+25/12/09 22:28:28 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 22:28:29 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 22:28:29 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 22:28:29 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 22:28:31 INFO Master: Registering worker spark-worker:32783 with 4 cores, 4.0 GiB RAM
+25/12/09 22:29:43 INFO Master: Registering app AmountDataProcessor
+25/12/09 22:29:43 INFO Master: Registered app AmountDataProcessor with ID app-20251209222943-0000
+25/12/09 22:29:43 INFO Master: Start scheduling for app app-20251209222943-0000 with rpId: 0
+25/12/09 22:29:43 INFO Master: Launching executor app-20251209222943-0000/0 on worker worker-20251209222829-spark-worker-32783
+25/12/09 22:29:43 INFO Master: Launching executor app-20251209222943-0000/1 on worker worker-20251209222829-spark-worker-32783
+25/12/09 22:29:43 INFO Master: Start scheduling for app app-20251209222943-0000 with rpId: 0
+25/12/09 22:29:43 INFO Master: Start scheduling for app app-20251209222943-0000 with rpId: 0
+25/12/09 22:29:59 INFO Master: Received unregister request from application app-20251209222943-0000
+25/12/09 22:29:59 INFO Master: Removing app app-20251209222943-0000
+25/12/09 22:29:59 INFO Master: 172.19.0.10:40776 got disassociated, removing it.
+25/12/09 22:29:59 INFO Master: f91dceacf835:38263 got disassociated, removing it.
+25/12/09 22:29:59 WARN Master: Got status update for unknown executor app-20251209222943-0000/1
+25/12/09 22:29:59 WARN Master: Got status update for unknown executor app-20251209222943-0000/0
+25/12/09 22:32:53 INFO Master: 172.19.0.7:40262 got disassociated, removing it.
+25/12/09 22:32:53 INFO Master: spark-worker:32783 got disassociated, removing it.
+25/12/09 22:32:53 INFO Master: Removing worker worker-20251209222829-spark-worker-32783 on spark-worker:32783
+25/12/09 22:32:53 INFO Master: Telling app of lost worker: worker-20251209222829-spark-worker-32783
+starting org.apache.spark.deploy.master.Master, logging to /opt/bitnami/spark/logs/spark--org.apache.spark.deploy.master.Master-1-spark-master.out
+Spark Command: /opt/bitnami/java/bin/java -cp /opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host spark-master --port 7077 --webui-port 8080 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 22:36:57 INFO Master: Started daemon with process name: 27@spark-master
+25/12/09 22:36:57 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 22:36:57 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 22:36:57 INFO SignalUtils: Registering signal handler for INT
+25/12/09 22:36:58 INFO SecurityManager: Changing view acls to: root,spark
+25/12/09 22:36:58 INFO SecurityManager: Changing modify acls to: root,spark
+25/12/09 22:36:58 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:36:58 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:36:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root, spark; groups with view permissions: EMPTY; users with modify permissions: root, spark; groups with modify permissions: EMPTY
+25/12/09 22:36:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 22:36:59 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/12/09 22:36:59 INFO Master: Starting Spark master at spark://spark-master:7077
+25/12/09 22:36:59 INFO Master: Running Spark version 3.4.0
+25/12/09 22:36:59 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+25/12/09 22:36:59 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/12/09 22:36:59 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://spark-master:8080
+25/12/09 22:37:00 INFO Master: I have been elected leader! New state: ALIVE
+25/12/09 22:37:01 INFO Master: Registering worker spark-worker:39941 with 4 cores, 4.0 GiB RAM
+25/12/09 22:40:16 INFO Master: 172.19.0.8:42098 got disassociated, removing it.
+25/12/09 22:40:16 INFO Master: spark-worker:39941 got disassociated, removing it.
+25/12/09 22:40:16 INFO Master: Removing worker worker-20251209223659-spark-worker-39941 on spark-worker:39941
+25/12/09 22:40:16 INFO Master: Telling app of lost worker: worker-20251209223659-spark-worker-39941

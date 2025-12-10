@@ -12,28 +12,23 @@ A production-ready data platform with Apache Spark, Apache Airflow, Jupyter, Min
 - **Dremio** - Data lakehouse query engine
 - **Nessie** - Data catalog for Git-like version control
 
-## ⚡ Quick Start
 
-### Prerequisites
-- Docker and Docker Compose installed
-- At least 16GB RAM available
-- 50GB free disk space
+## Large dependency JARs for dockerfile
 
-### Installation
+The `dockerfile/` folder contains three big binaries (> 100 MB).  
+They are **not** included in the repo directly—only Git-LFS pointer files are committed.  
+please download them manually use the links below and store in same folder/dir.
+
+| File | Size | Maven Central |
+|------|------|---------------|
+| `hudi-spark3.4-bundle_2.12-0.14.0.jar` | ≈ 100 MB | [mvnrepo](https://mvnrepository.com/artifact/org.apache.hudi/hudi-spark3.4-bundle) |
+| `aws-java-sdk-bundle-1.12.262.jar` | ≈ 268 MB | [mvnrepo](https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.12.262) • [direct](https://repo.maven.apache.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/) |
+| `hadoop-aws-3.3.4.jar` | ≈ 75 MB | [mvnrepo](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.3.4) • [direct](https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/) |
+
+After cloning, restore the real files with:
 
 ```bash
-# 1. Extract the archive (if received as tar.gz)
-tar -xzf data-platform-complete.tar.gz
-cd data-platform
-
-# 2. Start all services
-docker-compose up -d
-
-# 3. Wait 2-3 minutes for initialization
-docker-compose ps
-
-# 4. Access the services (see URLs below)
-```
+git lfs pull
 
 ## 🌐 Access URLs
 
@@ -285,9 +280,9 @@ If you encounter issues:
 
 ## 📝 Version Info
 
-- Spark: 3.x
-- Airflow: 2.x
-- Python: 3.9+
+- Spark: 3.4
+- Airflow: 2.7
+- Python: 3.9
 - PostgreSQL: Latest
 - MinIO: Latest
 
@@ -303,4 +298,4 @@ If you encounter issues:
 
 **Happy Data Engineering! 🚀**
 
-For questions or issues, check the logs first: `docker-compose logs -f`
+For questions or issues: `en.sonukumar@gmail.com`

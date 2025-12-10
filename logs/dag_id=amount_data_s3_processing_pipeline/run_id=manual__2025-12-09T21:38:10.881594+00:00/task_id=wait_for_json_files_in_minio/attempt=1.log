@@ -1,0 +1,17 @@
+[2025-12-09T21:38:13.193+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.wait_for_json_files_in_minio manual__2025-12-09T21:38:10.881594+00:00 [queued]>
+[2025-12-09T21:38:13.199+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.wait_for_json_files_in_minio manual__2025-12-09T21:38:10.881594+00:00 [queued]>
+[2025-12-09T21:38:13.200+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-12-09T21:38:13.210+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonSensor): wait_for_json_files_in_minio> on 2025-12-09 21:38:10.881594+00:00
+[2025-12-09T21:38:13.215+0000] {standard_task_runner.py:57} INFO - Started process 6148 to run task
+[2025-12-09T21:38:13.217+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'amount_data_s3_processing_pipeline', 'wait_for_json_files_in_minio', 'manual__2025-12-09T21:38:10.881594+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/amount_data_s3_processing_pipeline.py', '--cfg-path', '/tmp/tmpmxrm82aa']
+[2025-12-09T21:38:13.218+0000] {standard_task_runner.py:85} INFO - Job 38: Subtask wait_for_json_files_in_minio
+[2025-12-09T21:38:13.256+0000] {task_command.py:415} INFO - Running <TaskInstance: amount_data_s3_processing_pipeline.wait_for_json_files_in_minio manual__2025-12-09T21:38:10.881594+00:00 [running]> on host 9f0bb37009ef
+[2025-12-09T21:38:13.322+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='amount_data_s3_processing_pipeline' AIRFLOW_CTX_TASK_ID='wait_for_json_files_in_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-12-09T21:38:10.881594+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-09T21:38:10.881594+00:00'
+[2025-12-09T21:38:13.324+0000] {python.py:72} INFO - Poking callable: <function check_for_json_files_in_minio at 0x7f149510aca0>
+[2025-12-09T21:38:13.393+0000] {amount_data_s3_processing_pipeline.py:64} INFO - ✅ Found 2 JSON file(s) in MinIO
+[2025-12-09T21:38:13.393+0000] {amount_data_s3_processing_pipeline.py:66} INFO -    📄 source/amounts.json
+[2025-12-09T21:38:13.393+0000] {amount_data_s3_processing_pipeline.py:66} INFO -    📄 source/orders.json
+[2025-12-09T21:38:13.393+0000] {base.py:287} INFO - Success criteria met. Exiting.
+[2025-12-09T21:38:13.404+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=amount_data_s3_processing_pipeline, task_id=wait_for_json_files_in_minio, execution_date=20251209T213810, start_date=20251209T213813, end_date=20251209T213813
+[2025-12-09T21:38:13.429+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-09T21:38:13.453+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -7,17 +7,17 @@ dockerfile/
 
 
 dockerfile/aws-java-sdk-bundle-*.jar
-# # Spark/Airflow logs
-# logs/
-# spark-logs/
-# spark-events/
-# spark-work/
+Spark/Airflow logs
+logs/
+spark-logs/
+spark-events/
+spark-work/
 
-# # Data directories
-# postgres/
-# minio/
-# nessie/
-# dremio/
+# Data directories
+postgres/
+minio/
+nessie/
+dremio/
 
 # # Python cache
 # __pycache__/

@@ -1,0 +1,23 @@
+[2025-12-09T22:29:37.938+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_file_detected manual__2025-12-09T22:29:11.763670+00:00 [queued]>
+[2025-12-09T22:29:37.945+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: amount_data_s3_processing_pipeline.log_file_detected manual__2025-12-09T22:29:11.763670+00:00 [queued]>
+[2025-12-09T22:29:37.945+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-12-09T22:29:37.954+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): log_file_detected> on 2025-12-09 22:29:11.763670+00:00
+[2025-12-09T22:29:37.959+0000] {standard_task_runner.py:57} INFO - Started process 303 to run task
+[2025-12-09T22:29:37.961+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'amount_data_s3_processing_pipeline', 'log_file_detected', 'manual__2025-12-09T22:29:11.763670+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/amount_data_s3_processing_pipeline.py', '--cfg-path', '/tmp/tmpjxq5xrid']
+[2025-12-09T22:29:37.963+0000] {standard_task_runner.py:85} INFO - Job 77: Subtask log_file_detected
+[2025-12-09T22:29:38.000+0000] {task_command.py:415} INFO - Running <TaskInstance: amount_data_s3_processing_pipeline.log_file_detected manual__2025-12-09T22:29:11.763670+00:00 [running]> on host f91dceacf835
+[2025-12-09T22:29:38.075+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='amount_data_s3_processing_pipeline' AIRFLOW_CTX_TASK_ID='log_file_detected' AIRFLOW_CTX_EXECUTION_DATE='2025-12-09T22:29:11.763670+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-09T22:29:11.763670+00:00'
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO - 
+================================================================================
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO -   📁 JSON FILE DETECTED AND RENAMED!
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO -   📄 File: amounts_20251209_222937.json
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO -   📍 Location: source/
+[2025-12-09T22:29:38.086+0000] {logging_mixin.py:151} INFO -   🚀 Triggering Spark job for data processing...
+[2025-12-09T22:29:38.087+0000] {logging_mixin.py:151} INFO -   ⏳ Please wait, this may take a few minutes...
+[2025-12-09T22:29:38.087+0000] {logging_mixin.py:151} INFO - ================================================================================
+[2025-12-09T22:29:38.087+0000] {amount_data_s3_processing_pipeline.py:208} INFO - 📁 File detection confirmed - launching Spark job for amounts_20251209_222937.json
+[2025-12-09T22:29:38.087+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-09T22:29:38.095+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=amount_data_s3_processing_pipeline, task_id=log_file_detected, execution_date=20251209T222911, start_date=20251209T222937, end_date=20251209T222938
+[2025-12-09T22:29:38.133+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-09T22:29:38.153+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

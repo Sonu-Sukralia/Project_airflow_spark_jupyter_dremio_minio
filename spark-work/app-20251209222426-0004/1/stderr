@@ -1,0 +1,281 @@
+Spark Executor Command: "/opt/bitnami/java/bin/java" "-cp" "/opt/bitnami/spark/conf/:/opt/bitnami/spark/jars/*" "-Xmx2048M" "-Dspark.driver.port=43145" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@9a461450159a:43145" "--executor-id" "1" "--hostname" "spark-worker" "--cores" "2" "--app-id" "app-20251209222426-0004" "--worker-url" "spark://Worker@spark-worker:45971" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/12/09 22:24:28 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 388@spark-worker
+25/12/09 22:24:28 INFO SignalUtils: Registering signal handler for TERM
+25/12/09 22:24:28 INFO SignalUtils: Registering signal handler for HUP
+25/12/09 22:24:28 INFO SignalUtils: Registering signal handler for INT
+25/12/09 22:24:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/09 22:24:28 INFO SecurityManager: Changing view acls to: root
+25/12/09 22:24:28 INFO SecurityManager: Changing modify acls to: root
+25/12/09 22:24:28 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:24:28 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:24:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+25/12/09 22:24:29 INFO TransportClientFactory: Successfully created connection to 9a461450159a/172.19.0.7:43145 after 138 ms (0 ms spent in bootstraps)
+25/12/09 22:24:29 INFO SecurityManager: Changing view acls to: root
+25/12/09 22:24:29 INFO SecurityManager: Changing modify acls to: root
+25/12/09 22:24:29 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 22:24:29 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 22:24:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+25/12/09 22:24:29 INFO TransportClientFactory: Successfully created connection to 9a461450159a/172.19.0.7:43145 after 4 ms (0 ms spent in bootstraps)
+25/12/09 22:24:29 INFO DiskBlockManager: Created local directory at /tmp/spark-540f931a-558f-4588-bc68-520d41baf403/executor-48529770-64aa-45a4-95fe-9042e42d55c0/blockmgr-6eb0ce1e-0555-4c27-b3f3-78dbbc8bf8b2
+25/12/09 22:24:29 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+25/12/09 22:24:29 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@9a461450159a:43145
+25/12/09 22:24:29 INFO WorkerWatcher: Connecting to worker spark://Worker@spark-worker:45971
+25/12/09 22:24:29 INFO TransportClientFactory: Successfully created connection to spark-worker/172.19.0.10:45971 after 3 ms (0 ms spent in bootstraps)
+25/12/09 22:24:29 INFO WorkerWatcher: Successfully connected to spark://Worker@spark-worker:45971
+25/12/09 22:24:29 INFO ResourceUtils: ==============================================================
+25/12/09 22:24:29 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/12/09 22:24:29 INFO ResourceUtils: ==============================================================
+25/12/09 22:24:29 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/12/09 22:24:29 INFO Executor: Starting executor ID 1 on host spark-worker
+25/12/09 22:24:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44747.
+25/12/09 22:24:29 INFO NettyBlockTransferService: Server created on spark-worker:44747
+25/12/09 22:24:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/09 22:24:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, spark-worker, 44747, None)
+25/12/09 22:24:30 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, spark-worker, 44747, None)
+25/12/09 22:24:30 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, spark-worker, 44747, None)
+25/12/09 22:24:30 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/12/09 22:24:31 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+25/12/09 22:24:31 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+25/12/09 22:24:32 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:32 INFO TransportClientFactory: Successfully created connection to 9a461450159a/172.19.0.7:33999 after 2 ms (0 ms spent in bootstraps)
+25/12/09 22:24:32 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.7 KiB, free 1048.8 MiB)
+25/12/09 22:24:32 INFO TorrentBroadcast: Reading broadcast variable 1 took 131 ms
+25/12/09 22:24:32 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 15.7 KiB, free 1048.8 MiB)
+25/12/09 22:24:32 INFO FileScanRDD: Reading File path: s3a://test/source/amounts_20251209_221610.json, range: 0-182, partition values: [empty row]
+25/12/09 22:24:32 INFO CodeGenerator: Code generated in 139.655967 ms
+25/12/09 22:24:32 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:32 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 35.1 KiB, free 1048.7 MiB)
+25/12/09 22:24:32 INFO TorrentBroadcast: Reading broadcast variable 0 took 17 ms
+25/12/09 22:24:32 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 380.9 KiB, free 1048.4 MiB)
+25/12/09 22:24:32 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+25/12/09 22:24:32 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+25/12/09 22:24:32 INFO MetricsSystemImpl: s3a-file-system metrics system started
+25/12/09 22:24:33 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2128 bytes result sent to driver
+25/12/09 22:24:36 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+25/12/09 22:24:36 INFO Executor: Running task 0.0 in stage 7.0 (TID 5)
+25/12/09 22:24:36 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+25/12/09 22:24:36 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:36 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1048.4 MiB)
+25/12/09 22:24:36 INFO TorrentBroadcast: Reading broadcast variable 9 took 17 ms
+25/12/09 22:24:36 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 12.2 KiB, free 1048.4 MiB)
+25/12/09 22:24:37 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+25/12/09 22:24:37 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@9a461450159a:43145)
+25/12/09 22:24:37 INFO MapOutputTrackerWorker: Got the map output locations
+25/12/09 22:24:37 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 0 (0.0 B) local and 1 (60.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/12/09 22:24:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+25/12/09 22:24:37 INFO TransportClientFactory: Successfully created connection to spark-worker/172.19.0.10:46417 after 2 ms (0 ms spent in bootstraps)
+25/12/09 22:24:37 INFO CodeGenerator: Code generated in 31.471599 ms
+25/12/09 22:24:37 INFO Executor: Finished task 0.0 in stage 7.0 (TID 5). 4038 bytes result sent to driver
+25/12/09 22:24:37 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+25/12/09 22:24:37 INFO Executor: Running task 0.0 in stage 8.0 (TID 6)
+25/12/09 22:24:37 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 1048.3 MiB)
+25/12/09 22:24:37 INFO TorrentBroadcast: Reading broadcast variable 11 took 16 ms
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 14.6 KiB, free 1048.3 MiB)
+25/12/09 22:24:37 INFO CodeGenerator: Code generated in 16.627224 ms
+25/12/09 22:24:37 INFO FileScanRDD: Reading File path: s3a://test/source/amounts_20251209_221610.json, range: 0-182, partition values: [empty row]
+25/12/09 22:24:37 INFO CodeGenerator: Code generated in 22.857013 ms
+25/12/09 22:24:37 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 35.1 KiB, free 1048.3 MiB)
+25/12/09 22:24:37 INFO TorrentBroadcast: Reading broadcast variable 10 took 19 ms
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 380.9 KiB, free 1047.9 MiB)
+25/12/09 22:24:37 INFO Executor: Finished task 0.0 in stage 8.0 (TID 6). 1787 bytes result sent to driver
+25/12/09 22:24:37 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+25/12/09 22:24:37 INFO Executor: Running task 0.0 in stage 9.0 (TID 7)
+25/12/09 22:24:37 INFO TorrentBroadcast: Started reading broadcast variable 13 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 10.1 KiB, free 1048.0 MiB)
+25/12/09 22:24:37 INFO TorrentBroadcast: Reading broadcast variable 13 took 23 ms
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 23.0 KiB, free 1048.3 MiB)
+25/12/09 22:24:37 INFO CodeGenerator: Code generated in 42.618557 ms
+25/12/09 22:24:37 INFO FileScanRDD: Reading File path: s3a://test/source/amounts_20251209_221610.json, range: 0-182, partition values: [empty row]
+25/12/09 22:24:37 INFO TorrentBroadcast: Started reading broadcast variable 12 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 35.1 KiB, free 1048.7 MiB)
+25/12/09 22:24:37 INFO TorrentBroadcast: Reading broadcast variable 12 took 16 ms
+25/12/09 22:24:37 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 380.9 KiB, free 1048.3 MiB)
+25/12/09 22:24:37 INFO Executor: Finished task 0.0 in stage 9.0 (TID 7). 1966 bytes result sent to driver
+25/12/09 22:24:38 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+25/12/09 22:24:38 INFO Executor: Running task 0.0 in stage 12.0 (TID 9)
+25/12/09 22:24:38 INFO MapOutputTrackerWorker: Updating epoch to 3 and clearing cache
+25/12/09 22:24:38 INFO TorrentBroadcast: Started reading broadcast variable 16 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:38 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 79.5 KiB, free 1048.3 MiB)
+25/12/09 22:24:38 INFO TorrentBroadcast: Reading broadcast variable 16 took 14 ms
+25/12/09 22:24:38 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 218.7 KiB, free 1048.1 MiB)
+25/12/09 22:24:38 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/12/09 22:24:38 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/12/09 22:24:38 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/12/09 22:24:38 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/12/09 22:24:38 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/12/09 22:24:38 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/12/09 22:24:38 INFO CodecConfig: Compression: SNAPPY
+25/12/09 22:24:38 INFO CodecConfig: Compression: SNAPPY
+25/12/09 22:24:38 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/12/09 22:24:38 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "amount",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "id",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "processing_timestamp",
+    "type" : "timestamp",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "processing_date",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "processing_time",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "status",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "amount_category",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int64 amount;
+  optional int64 id;
+  required int96 processing_timestamp;
+  required binary processing_date (STRING);
+  required binary processing_time (STRING);
+  required binary status (STRING);
+  required binary amount_category (STRING);
+}
+
+       
+25/12/09 22:24:38 INFO CodecPool: Got brand-new compressor [.snappy]
+25/12/09 22:24:39 INFO CodeGenerator: Code generated in 15.374574 ms
+25/12/09 22:24:39 INFO FileScanRDD: Reading File path: s3a://test/source/amounts_20251209_221610.json, range: 0-182, partition values: [empty row]
+25/12/09 22:24:39 INFO TorrentBroadcast: Started reading broadcast variable 15 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:39 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 35.1 KiB, free 1048.0 MiB)
+25/12/09 22:24:39 INFO TorrentBroadcast: Reading broadcast variable 15 took 16 ms
+25/12/09 22:24:39 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 380.9 KiB, free 1047.7 MiB)
+25/12/09 22:24:39 INFO FileOutputCommitter: Saved output of task 'attempt_202512092224388232694713619945180_0012_m_000000_9' to s3a://warehouse/processed/_temporary/0/task_202512092224388232694713619945180_0012_m_000000
+25/12/09 22:24:39 INFO SparkHadoopMapRedUtil: attempt_202512092224388232694713619945180_0012_m_000000_9: Committed. Elapsed time: 181 ms.
+25/12/09 22:24:39 INFO Executor: Finished task 0.0 in stage 12.0 (TID 9). 2613 bytes result sent to driver
+25/12/09 22:24:40 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+25/12/09 22:24:40 INFO Executor: Running task 0.0 in stage 15.0 (TID 11)
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Updating epoch to 4 and clearing cache
+25/12/09 22:24:40 INFO TorrentBroadcast: Started reading broadcast variable 19 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 1047.7 MiB)
+25/12/09 22:24:40 INFO TorrentBroadcast: Reading broadcast variable 19 took 18 ms
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 12.2 KiB, free 1047.6 MiB)
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@9a461450159a:43145)
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Got the map output locations
+25/12/09 22:24:40 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 0 (0.0 B) local and 1 (60.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/12/09 22:24:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+25/12/09 22:24:40 INFO Executor: Finished task 0.0 in stage 15.0 (TID 11). 3995 bytes result sent to driver
+25/12/09 22:24:40 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+25/12/09 22:24:40 INFO Executor: Running task 0.0 in stage 16.0 (TID 12)
+25/12/09 22:24:40 INFO TorrentBroadcast: Started reading broadcast variable 21 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 10.1 KiB, free 1047.6 MiB)
+25/12/09 22:24:40 INFO TorrentBroadcast: Reading broadcast variable 21 took 13 ms
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 23.0 KiB, free 1047.6 MiB)
+25/12/09 22:24:40 INFO FileScanRDD: Reading File path: s3a://test/source/amounts_20251209_221610.json, range: 0-182, partition values: [empty row]
+25/12/09 22:24:40 INFO TorrentBroadcast: Started reading broadcast variable 20 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 35.1 KiB, free 1047.6 MiB)
+25/12/09 22:24:40 INFO TorrentBroadcast: Reading broadcast variable 20 took 11 ms
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 380.9 KiB, free 1047.2 MiB)
+25/12/09 22:24:40 INFO Executor: Finished task 0.0 in stage 16.0 (TID 12). 1923 bytes result sent to driver
+25/12/09 22:24:40 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+25/12/09 22:24:40 INFO Executor: Running task 0.0 in stage 18.0 (TID 13)
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Updating epoch to 5 and clearing cache
+25/12/09 22:24:40 INFO TorrentBroadcast: Started reading broadcast variable 22 with 1 pieces (estimated total size 4.0 MiB)
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 80.9 KiB, free 1047.1 MiB)
+25/12/09 22:24:40 INFO TorrentBroadcast: Reading broadcast variable 22 took 14 ms
+25/12/09 22:24:40 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 224.8 KiB, free 1046.9 MiB)
+25/12/09 22:24:40 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/12/09 22:24:40 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/12/09 22:24:40 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/12/09 22:24:40 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/12/09 22:24:40 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/12/09 22:24:40 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/12/09 22:24:40 INFO CodecConfig: Compression: SNAPPY
+25/12/09 22:24:40 INFO CodecConfig: Compression: SNAPPY
+25/12/09 22:24:40 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/12/09 22:24:40 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "total_records",
+    "type" : "long",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "total_amount",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "average_amount",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "max_amount",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "min_amount",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "report_date",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "report_time",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int64 total_records;
+  optional int64 total_amount;
+  optional double average_amount;
+  optional int64 max_amount;
+  optional int64 min_amount;
+  required binary report_date (STRING);
+  required binary report_time (STRING);
+}
+
+       
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@9a461450159a:43145)
+25/12/09 22:24:40 INFO MapOutputTrackerWorker: Got the map output locations
+25/12/09 22:24:40 INFO ShuffleBlockFetcherIterator: Getting 1 (88.0 B) non-empty blocks including 1 (88.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/12/09 22:24:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+25/12/09 22:24:40 INFO CodeGenerator: Code generated in 33.723569 ms
+25/12/09 22:24:40 INFO FileOutputCommitter: Saved output of task 'attempt_202512092224401698954174544285122_0018_m_000000_13' to s3a://warehouse/reports/_temporary/0/task_202512092224401698954174544285122_0018_m_000000
+25/12/09 22:24:40 INFO SparkHadoopMapRedUtil: attempt_202512092224401698954174544285122_0018_m_000000_13: Committed. Elapsed time: 91 ms.
+25/12/09 22:24:40 INFO Executor: Finished task 0.0 in stage 18.0 (TID 13). 5017 bytes result sent to driver
+25/12/09 22:24:41 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+25/12/09 22:24:41 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown
