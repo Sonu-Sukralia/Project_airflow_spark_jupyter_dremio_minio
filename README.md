@@ -12,6 +12,12 @@ A production-ready data platform with Apache Spark, Apache Airflow, Jupyter, Min
 - **Dremio** - Data lakehouse query engine
 - **Nessie** - Data catalog for Git-like version control
 
+## Quick start
+
+Step 1: Run the setup script  
+```bash
+chmod +x complete.sh
+./complete.sh
 
 ## Large dependency JARs for dockerfile
 
