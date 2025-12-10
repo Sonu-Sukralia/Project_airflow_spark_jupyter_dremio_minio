@@ -302,6 +302,29 @@ If you encounter issues:
 
 ---
 
+## 🔐 Default Credentials
+
+| Service | Username | Password |
+|----------|-----------|-----------|
+| Airflow | `admin` | `admin` |
+| MinIO | `admin` | `password` |
+| Postgres | `airflow` | `airflow` |
+
+---
+
+## ✅ Run the Project
+
+```bash
+docker compose -p data_platform up -d
+```
+
+Stop the entire project:
+
+```bash
+docker compose -p data_platform down
+```
+
+
 **Happy Data Engineering! 🚀**
 
 For questions or issues: `en.sonukumar@gmail.com`
