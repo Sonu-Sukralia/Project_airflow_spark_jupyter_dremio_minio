@@ -1,63 +1,38 @@
-# Data directories - DO NOT commit
-postgres/
-minio/
-nessie/
-dremio/
-logs/
-spark-events/
-spark-logs/
-spark-work/
+# Docker files
+dockerfile/
+*.jar
+*.war
+*.zip
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-.ipynb_checkpoints/
+# # Spark/Airflow logs
+# logs/
+# spark-logs/
+# spark-events/
+# spark-work/
 
-# Environment
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# # Data directories
+# postgres/
+# minio/
+# nessie/
+# dremio/
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
-.pydevproject
-.settings/
+# # Python cache
+# __pycache__/
+# *.pyc
+# *.pyo
+# .pytest_cache/
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# # IDE
+# .vscode/
+# .idea/
+# *.swp
+# *.swo
 
-# Logs
-*.log
+# # OS
+# .DS_Store
+# Thumbs.db
+
+# # Environment
+# .env
+# *.env
+# !airflow.env
