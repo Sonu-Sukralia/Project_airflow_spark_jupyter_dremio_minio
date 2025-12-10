@@ -12,29 +12,38 @@ A production-ready data platform with Apache Spark, Apache Airflow, Jupyter, Min
 - **Dremio** - Data lakehouse query engine
 - **Nessie** - Data catalog for Git-like version control
 
-## Quick start
+## 🚀 Quick Start
 
-Step 1: Run the setup script  
+### Step 1: Download Required JAR Files
+
+The `dockerfile/` folder requires three large dependency JARs (> 100 MB each). Download them manually and place them in the `dockerfile/` directory:
+
+| File | Size | Download Link |
+|------|------|---------------|
+| `hudi-spark3.4-bundle_2.12-0.14.0.jar` | ≈ 100 MB | [Maven Central](https://mvnrepository.com/artifact/org.apache.hudi/hudi-spark3.4-bundle) |
+| `aws-java-sdk-bundle-1.12.262.jar` | ≈ 268 MB | [Maven Central](https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.12.262) • [Direct Download](https://repo.maven.apache.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/) |
+| `hadoop-aws-3.3.4.jar` | ≈ 75 MB | [Maven Central](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.3.4) • [Direct Download](https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/) |
+
+### Step 2: Run the Setup Script
+
 ```bash
 chmod +x complete.sh
 ./complete.sh
+```
 
-## Large dependency JARs for dockerfile
-
-The `dockerfile/` folder contains three big binaries (> 100 MB).  
-They are **not** included in the repo directly—only Git-LFS pointer files are committed.  
-please download them manually use the links below and store in same folder/dir.
-
-| File | Size | Maven Central |
-|------|------|---------------|
-| `hudi-spark3.4-bundle_2.12-0.14.0.jar` | ≈ 100 MB | [mvnrepo](https://mvnrepository.com/artifact/org.apache.hudi/hudi-spark3.4-bundle) |
-| `aws-java-sdk-bundle-1.12.262.jar` | ≈ 268 MB | [mvnrepo](https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.12.262) • [direct](https://repo.maven.apache.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/) |
-| `hadoop-aws-3.3.4.jar` | ≈ 75 MB | [mvnrepo](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.3.4) • [direct](https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/) |
-
-After cloning, restore the real files with:
+### Step 3: Start the Platform
 
 ```bash
-git lfs pull
+docker compose -p data_platform up -d
+```
+
+### Step 4: Verify Services
+
+```bash
+docker compose -p data_platform ps
+```
+
+All services should show as "Up" or "healthy".
 
 ## 🌐 Access URLs
 
@@ -54,7 +63,7 @@ git lfs pull
 ### Getting Jupyter Token
 
 ```bash
-docker-compose logs jupyter-spark | grep token
+docker compose -p data_platform logs jupyter-spark | grep token
 ```
 
 Look for a line like: `http://127.0.0.1:8888/?token=abc123...`
@@ -63,7 +72,12 @@ Look for a line like: `http://127.0.0.1:8888/?token=abc123...`
 
 ### 1. Run a Spark Job from Airflow
 
-The platform includes an example DAG (`example_spark_dag`) that you can trigger from the Airflow UI.
+The platform includes an example DAG (`example_spark_dag`) that you can trigger from the Airflow UI:
+
+1. Open http://localhost:8085
+2. Login with `admin` / `admin`
+3. Find `example_spark_dag` in the DAG list
+4. Toggle it to "On" and click "Trigger DAG"
 
 ### 2. Use Jupyter Notebooks
 
@@ -85,45 +99,49 @@ docker exec -it spark-master bash
 ### 4. Access MinIO Storage
 
 1. Open http://localhost:9001
-2. Login with admin/password
+2. Login with `admin` / `password`
 3. Browse the `warehouse` and `test` buckets
 4. Upload/download files as needed
 
 ## 🛠️ Common Commands
 
 ### View Logs
+
 ```bash
 # All services
-docker-compose logs -f
+docker compose -p data_platform logs -f
 
 # Specific service
-docker-compose logs -f airflow-webserver
-docker-compose logs -f spark-master
-docker-compose logs -f jupyter-spark
+docker compose -p data_platform logs -f airflow-webserver
+docker compose -p data_platform logs -f spark-master
+docker compose -p data_platform logs -f jupyter-spark
 ```
 
 ### Restart Services
+
 ```bash
 # Restart all
-docker-compose restart
+docker compose -p data_platform restart
 
 # Restart specific service
-docker-compose restart spark-worker
+docker compose -p data_platform restart spark-worker
 ```
 
 ### Stop/Start Services
+
 ```bash
 # Stop all services
-docker-compose down
+docker compose -p data_platform down
 
 # Start all services
-docker-compose up -d
+docker compose -p data_platform up -d
 
-# Stop and remove all data (CAUTION!)
-docker-compose down -v
+# Stop and remove all data (⚠️ CAUTION!)
+docker compose -p data_platform down -v
 ```
 
 ### Enter Container Shell
+
 ```bash
 docker exec -it spark-master bash
 docker exec -it airflow-webserver bash
@@ -131,8 +149,9 @@ docker exec -it jupyter-spark bash
 ```
 
 ### Check Service Status
+
 ```bash
-docker-compose ps
+docker compose -p data_platform ps
 ```
 
 ## 📁 Directory Structure
@@ -141,22 +160,28 @@ docker-compose ps
 data-platform/
 ├── docker-compose.yml          # Main orchestration file
 ├── airflow.env                 # Airflow configuration
+├── complete.sh                 # Setup script
 ├── README.md                   # This file
-├── .gitignore                 # Git ignore rules
+├── .gitignore                  # Git ignore rules
 │
-├── dags/                      # Airflow DAGs
+├── dockerfile/                 # Docker build files
+│   ├── hudi-spark3.4-bundle_2.12-0.14.0.jar
+│   ├── aws-java-sdk-bundle-1.12.262.jar
+│   └── hadoop-aws-3.3.4.jar
+│
+├── dags/                       # Airflow DAGs
 │   └── example_dag.py
 │
-├── jobs/                      # Spark job scripts
+├── jobs/                       # Spark job scripts
 │   └── example_spark_job.py
 │
-├── notebooks/                 # Jupyter notebooks
+├── notebooks/                  # Jupyter notebooks
 │   └── 01_getting_started.ipynb
 │
-├── spark-conf/               # Spark configuration
+├── spark-conf/                 # Spark configuration
 │   └── spark-defaults.conf
 │
-└── [data directories]/       # Created automatically
+└── [data directories]/         # Created automatically
     ├── logs/
     ├── spark-events/
     ├── spark-logs/
@@ -191,17 +216,21 @@ spark-worker:
 1. Create a Python file in the `jobs/` directory
 2. Submit it using spark-submit or from Airflow
 
+### Scale Spark Workers
+
+To add more Spark workers, duplicate the `spark-worker` service in `docker-compose.yml` and change the service name and container name.
+
 ## 🐛 Troubleshooting
 
 ### Services Won't Start
 
 ```bash
 # Check logs for specific service
-docker-compose logs [service-name]
+docker compose -p data_platform logs [service-name]
 
 # Common fix: remove and recreate
-docker-compose down
-docker-compose up -d
+docker compose -p data_platform down
+docker compose -p data_platform up -d
 ```
 
 ### Permission Errors
@@ -225,18 +254,19 @@ sudo lsof -i :8085  # or any other port
 Reduce resource allocation in `docker-compose.yml`:
 - Lower `SPARK_WORKER_MEMORY`
 - Reduce `SPARK_WORKER_CORES`
+- Limit number of parallel tasks in Airflow
 
 ### Cannot Connect to Spark Master
 
 ```bash
 # Check if Spark Master is running
-docker-compose ps spark-master
+docker compose -p data_platform ps spark-master
 
 # View logs
-docker-compose logs spark-master
+docker compose -p data_platform logs spark-master
 
 # Restart Spark services
-docker-compose restart spark-master spark-worker
+docker compose -p data_platform restart spark-master spark-worker
 ```
 
 ### Jupyter Can't Connect to Spark
@@ -246,26 +276,41 @@ docker-compose restart spark-master spark-worker
 docker exec -it jupyter-spark ping spark-master
 
 # Check Jupyter logs
-docker-compose logs jupyter-spark
+docker compose -p data_platform logs jupyter-spark
+
+# Restart Jupyter
+docker compose -p data_platform restart jupyter-spark
 ```
+
+### Missing JAR Files Error
+
+If you see errors about missing JAR files during Docker build:
+1. Verify all three JAR files are in the `dockerfile/` directory
+2. Check file names match exactly (case-sensitive)
+3. Verify file sizes match the expected sizes
 
 ## 📊 Performance Tips
 
 1. **Increase Spark Memory**: Edit `SPARK_WORKER_MEMORY` for larger datasets
-2. **Add More Workers**: Duplicate the spark-worker service in docker-compose.yml
+2. **Add More Workers**: Scale the spark-worker service in docker-compose.yml
 3. **Enable Spark UI**: Access http://localhost:4040 when a job is running
 4. **Monitor Resources**: Use `docker stats` to monitor container resources
 5. **Clean Old Logs**: The platform auto-cleans logs older than 7 days
+6. **Partition Your Data**: Use appropriate partitioning strategies in Spark jobs
+7. **Tune Spark Configs**: Adjust `spark-defaults.conf` for your workload
 
 ## 🔒 Security Notes
 
 **⚠️ This is a development setup - DO NOT use in production without:**
 
-1. Changing default passwords
-2. Enabling SSL/TLS
-3. Configuring authentication
-4. Setting up network security
-5. Implementing access controls
+1. Changing all default passwords
+2. Enabling SSL/TLS for all services
+3. Configuring proper authentication and authorization
+4. Setting up network security and firewalls
+5. Implementing access controls and RBAC
+6. Using secrets management (e.g., Vault, AWS Secrets Manager)
+7. Regular security updates and patching
+8. Proper backup and disaster recovery procedures
 
 ## 📖 Additional Resources
 
@@ -274,15 +319,17 @@ docker-compose logs jupyter-spark
 - [Jupyter Documentation](https://jupyter.org/documentation)
 - [MinIO Documentation](https://min.io/docs/)
 - [Dremio Documentation](https://docs.dremio.com/)
+- [Nessie Documentation](https://projectnessie.org/docs/)
 
 ## 🆘 Getting Help
 
 If you encounter issues:
 
-1. Check the logs: `docker-compose logs -f [service-name]`
-2. Verify all services are running: `docker-compose ps`
-3. Ensure you have enough resources (RAM/disk)
+1. Check the logs: `docker compose -p data_platform logs -f [service-name]`
+2. Verify all services are running: `docker compose -p data_platform ps`
+3. Ensure you have enough resources (RAM/disk space)
 4. Check firewall/antivirus isn't blocking ports
+5. Verify JAR files are downloaded correctly
 
 ## 📝 Version Info
 
@@ -291,40 +338,43 @@ If you encounter issues:
 - Python: 3.9
 - PostgreSQL: Latest
 - MinIO: Latest
+- Dremio: Latest
+- Nessie: Latest
 
 ## 🎓 Learning Path
 
-1. **Start with Jupyter** - Run `01_getting_started.ipynb`
-2. **Create an Airflow DAG** - Modify `example_dag.py`
-3. **Write a Spark Job** - Create a new job in `jobs/`
+1. **Start with Jupyter** - Run `01_getting_started.ipynb` to understand Spark basics
+2. **Create an Airflow DAG** - Modify `example_dag.py` to schedule your own workflows
+3. **Write a Spark Job** - Create a new job in `jobs/` directory
 4. **Explore MinIO** - Upload data and query it with Spark
 5. **Try Dremio** - Create a data source and run SQL queries
+6. **Use Nessie** - Explore data versioning and catalog features
 
----
+## 🔐 Default Credentials Summary
 
-## 🔐 Default Credentials
+| Service | Username | Password | Database (if applicable) |
+|---------|----------|----------|--------------------------|
+| Airflow | `admin` | `admin` | - |
+| MinIO | `admin` | `password` | - |
+| PostgreSQL | `airflow` | `airflow` | `airflow` |
 
-| Service | Username | Password |
-|----------|-----------|-----------|
-| Airflow | `admin` | `admin` |
-| MinIO | `admin` | `password` |
-| Postgres | `airflow` | `airflow` |
+## 🧹 Cleanup
 
----
-
-## ✅ Run the Project
-
-```bash
-docker compose -p data_platform up -d
-```
-
-Stop the entire project:
+To completely remove the platform and all data:
 
 ```bash
-docker compose -p data_platform down
+# Stop and remove containers, networks, and volumes
+docker compose -p data_platform down -v
+
+# Remove data directories (optional)
+rm -rf logs spark-events spark-logs spark-work postgres minio nessie dremio
 ```
 
+---
 
 **Happy Data Engineering! 🚀**
 
-For questions or issues: `en.sonukumar@gmail.com`
+For questions or issues, contact: `en.sonukumar@gmail.com`
+
+---
+
