@@ -4,6 +4,9 @@ dockerfile/
 *.war
 *.zip
 
+
+
+dockerfile/aws-java-sdk-bundle-*.jar
 # # Spark/Airflow logs
 # logs/
 # spark-logs/
